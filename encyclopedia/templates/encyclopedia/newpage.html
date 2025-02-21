@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Add New Page
+{% endblock %}
+
+{% block body %}
+    <form action="{% url 'save_new_page' %}" method="post">
+        {% csrf_token %}
+        <div style="display: flex; flex-direction: column;">
+            <input name="title" type="text" placeholder="Title" style="max-width: 80%;">
+            <textarea name="content" placeholder="Content">
+            </textarea>
+            <button type="submit" style="max-width: 10%; justify-content: left;">Save</button>
+        </div>
+    </form>
+{% endblock %}
